@@ -1,4 +1,5 @@
 import './drink.css';
+import { Layer } from '../Layer/layer.jsx';
 
 export const Drink = ({ id, name, ordered, image, layers }) => {
 return(
@@ -10,12 +11,7 @@ return(
           </div>
           <div className="drink__info">
             <h3>{name}</h3>
-            {layers.map((layer, index) => (
-              <div className="layer" key={index}>
-                <div className="layer__color" style={{ backgroundColor: layer.color }}></div>
-                <div className="layer__label">{layer.label}</div>
-              </div>
-            ))}
+            <Layer color="#feeeca" label="mléčná pěna" />
           </div>
         </div>
     <form className="drink__controls">
