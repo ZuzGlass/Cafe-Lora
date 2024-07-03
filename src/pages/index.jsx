@@ -27,7 +27,6 @@ document.querySelector('#root').innerHTML = render(
   </div>
 );
 
-
 const rolloutNav = document.querySelector(".rollout-nav")
 
 document.querySelector(".nav-btn").addEventListener("click", () => {
@@ -37,3 +36,30 @@ document.querySelector(".nav-btn").addEventListener("click", () => {
 rolloutNav.addEventListener("click", () => {
   rolloutNav.classList.add("nav-closed")
 });
+
+document.querySelectorAll(".drink__controls").forEach((form) => {
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    
+    const drinkId = event.target.dataset.id;
+    console.log(`${drinkId}`);
+
+    const response = await fetch(`http://localhost:4000/api/drinks/${drinkId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify([{ op: 'replace', path: '/ordered', value: true }]),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+    }
+    window.location.reload();
+  });
+});
+
+
+
+

@@ -16,13 +16,14 @@ return(
             ))}
           </div>
         </div>
-    <form className="drink__controls">
-      <input type="hidden" className="order-id" value="0" />
-      <button className="order-btn">
-        Objednat
+    <form className="drink__controls" data-id={id}>
+      <input type="hidden" className="order-id" value={id} />
+      <button className={`order-btn ${ordered ? "order-btn--ordered" : ""}`}>
+      {ordered ? "Zrušit" : "Objednat"}
       </button>
     </form>
     </div>
     </div>
 )
 };
+  
