@@ -3,7 +3,6 @@ import { Layer } from '../Layer/layer.jsx';
 
 export const Drink = ({ id, name, ordered, image, layers }) => {
 return(
-    <div className="drinks-list">
       <div className="drink">
         <div className="drink__product">
           <div className="drink__cup">
@@ -22,7 +21,6 @@ return(
       {ordered ? "Zrušit" : "Objednat"}
       </button>
     </form>
-    </div>
     </div>
 )
 };

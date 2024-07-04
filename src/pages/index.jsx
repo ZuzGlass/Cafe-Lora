@@ -16,14 +16,14 @@ console.log(drinks)
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
-    <Header />
+    <Header showMenu={true} />
     <main>
       <Banner />
       <Menu drinks={drinks} />
       <Gallery />
       <Contact />
-  </main>
-  <Footer />
+    </main>
+    <Footer />
   </div>
 );
 
@@ -59,7 +59,6 @@ document.querySelectorAll(".drink__controls").forEach((form) => {
     window.location.reload();
   });
 });
-
 
 
 

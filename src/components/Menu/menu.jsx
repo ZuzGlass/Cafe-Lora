@@ -9,6 +9,7 @@ export const Menu = ({ drinks }) => {
           <p className="menu-intro">
             Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
           </p>
+          <div className="drinks-list">
           {drinks.map((drink) => (
           <Drink
             key={drink.id}
@@ -19,6 +20,7 @@ export const Menu = ({ drinks }) => {
             image={drink.image}
           />
         ))}
+        </div>
           <div className="order-detail">
             <a href="/order.html">Detail objednávky</a>
           </div>
