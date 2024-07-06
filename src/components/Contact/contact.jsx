@@ -21,7 +21,7 @@ return (
         </table>
         <img
           className="contact__map"
-          src="./img/map.png"
+          src="./map.png"
         />
       </div>
     </div>
