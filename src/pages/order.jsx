@@ -9,7 +9,7 @@ import { Order } from '../components/Order/order.jsx';
 const response = await fetch("http://localhost:4000/api/drinks?filter=ordered:eq:true&select=id,name,image", {
         method: "GET",
       })
-      const json = await response.json();
+      const json = await response.json()
       const orderItems = json.data
 
 document.querySelector('#root').innerHTML = render(

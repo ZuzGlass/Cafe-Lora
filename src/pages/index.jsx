@@ -39,14 +39,14 @@ rolloutNav.addEventListener("click", () => {
 
 document.querySelectorAll(".drink__controls").forEach((form) => {
   form.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    event.preventDefault()
 
-    const drinkId = event.target.dataset.id;
-    console.log(`${drinkId}`);
+    const drinkId = event.target.dataset.id
+    console.log(`${drinkId}`)
 
-    const ordered = event.target.querySelector(".order-btn--ordered") ? true : false;
+    const ordered = event.target.querySelector(".order-btn--ordered") ? true : false
     
-    const toggleOrder = !ordered;
+    const toggleOrder = !ordered
 
     const response = await fetch(`http://localhost:4000/api/drinks/${drinkId}`, {
       method: "PATCH",
@@ -54,11 +54,11 @@ document.querySelectorAll(".drink__controls").forEach((form) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify([{ op: 'replace', path: '/ordered', value: toggleOrder }]),
-    });
+    })
 
     const json = await response.json();
-    console.log(json);
+    console.log(json)
 
-    window.location.reload();
-  });
+    window.location.reload()
+  })
 });
