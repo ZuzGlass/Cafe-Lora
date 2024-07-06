@@ -56,7 +56,7 @@ document.querySelectorAll(".drink__controls").forEach((form) => {
       body: JSON.stringify([{ op: 'replace', path: '/ordered', value: toggleOrder }]),
     })
 
-    const json = await response.json();
+    const json = await response.json()
     console.log(json)
 
     window.location.reload()
